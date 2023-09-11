@@ -2,7 +2,7 @@ export function Cards() {
     return (
         <>
             <h2>
-                Cards
+                Cards testes
             </h2>
         </>
     )
