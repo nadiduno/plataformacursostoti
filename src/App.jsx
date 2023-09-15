@@ -5,7 +5,7 @@ export function App() {
   return (
     <>
       <h1>
-        Sistema de Cursos Toti
+        Sistema de Gestão de Cursos Toti Diversidade
         <Cards />
         <VideosAulas />
       </h1>
