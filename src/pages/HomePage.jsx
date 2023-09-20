@@ -1,4 +1,4 @@
-import { GithubLogo, InstagramLogo, LinkedinLogo } from "phosphor-react"
+import { GithubLogo, InstagramLogo, LinkedinLogo, UserCircle } from "phosphor-react"
 import "../styles/HomePage.style.css"
 
 export function HomePage() {
@@ -7,14 +7,34 @@ export function HomePage() {
             <div className="container">
                 <aside>
                     <img
-                        src="src\assets\asidephoto.svg" 
+                        src="src\assets\asidephoto.svg"
                         alt=""
-                        className="asideImg" 
+                        className="asideImg"
                     />
                 </aside>
                 <main>
                     <div className="boxOrange">
+                        <div className="textWelcome">
+                            <h1>Olá Toter!</h1>
+                            <p>Faça login ou crie uma conta</p>
+                        </div>
+                        <div className="boxViolet">
+                            Formulário com bootstrap
+                        </div>
+                        <div className="account">
+                            <div>
+                                <p>Não tenho uma conta</p>
+                                <button className="buttonText textViolet linkHover">Criar conta</button>
+                            </div>
+                            <button className="buttonViolet linkHover">
+                                <UserCircle size={24} />
+                                Entrar na minha conta
+                            </button>
+                        </div>
+                    </div>
 
+                    <div className="boxForget">
+                        <p className="textViolet linkHover">Esqueceu seus dados?</p>
                     </div>
                 </main>
             </div>

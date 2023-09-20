@@ -13,4 +13,4 @@ export function Router() {
             <Route path='/aula' element={<Lesson />} />
         </Routes>
     )
-}
+}   
