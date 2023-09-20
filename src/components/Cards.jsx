@@ -1,9 +1,2 @@
-export function Cards() {
-    return (
-        <>
-            <h2>
-                Cards testes
-            </h2>
-        </>
-    )
-}
+import "./cardstaly.css"
+
