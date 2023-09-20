@@ -1,0 +1,7 @@
+.cardCourse {
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    border-radius: 12px 12px 0px 0px;
+    width: 303px;
+    height: 142.492px;
+    flex-shrink: 0;
+}

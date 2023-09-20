@@ -1,14 +1,11 @@
-import { Cards } from "./components/Cards";
-import { VideosAulas } from "./components/VideosAulas";
+import { BrowserRouter } from 'react-router-dom'
+import { Router } from './Router'
+import './global.css'
 
 export function App() {
   return (
-    <>
-      <h1>
-        Sistema de Gestão de Cursos Toti Diversidade
-        <Cards />
-        <VideosAulas />
-      </h1>
-    </>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   )
 }
