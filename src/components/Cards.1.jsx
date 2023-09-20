@@ -8,6 +8,7 @@ export function Cards() {
             <div>
                 <img src="assets\Rectangle 2.svg" alt="" />
                 <p>
+                <p>Projetos</p>
              <img src="assets\Ellipse 1.svg" alt="" />
                 </p>
                 <p>Projetos</p>
@@ -18,8 +19,6 @@ export function Cards() {
                 <p>Web Developer</p>
                 <p>20</p>
                 <p>Aulas</p>
-            </div>
-            <div className="cardlaranja">
             </div>
             <img src="assets/image 3.svg" alt="" />
             <p>
@@ -33,8 +32,6 @@ export function Cards() {
                 <p>20</p>
                 <p>Aulas</p>
             </div>
-            <div className="cardslaranja">
-            </div>
            <img src="assets\image 1.svg" alt="" />
            <img src="assets\Rectangle 2 (2).svg" alt="" />
            <p> HTML </p>
@@ -46,8 +43,6 @@ export function Cards() {
             <p>20
             </p>
             <p>Aulas</p>
-            <div className="triangulolaranja"> 
-
                 <img src="assets\image 2.svg" alt="" />
                 <img src="assets\Rectangle 2.svg" alt="" />
                 <p> CSS</p>
@@ -76,6 +71,5 @@ export function Cards() {
                     <p>20</p>
                     <p>Aulas</p>
                 </div>
-            </div>
 </>);
 }
