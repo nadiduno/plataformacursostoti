@@ -1,4 +1,4 @@
-import { Cards } from "./components/Cards.1";
+import { Cards } from "./components/Cards";
 import { VideosAulas } from "./components/VideosAulas";
 
 export function App() {
