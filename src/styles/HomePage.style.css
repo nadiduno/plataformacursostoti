@@ -1,0 +1,53 @@
+.containerMain {
+    margin: 0 auto;
+    padding-top: 4rem;
+    max-width: 80vi;
+    min-height: 100vw;
+    align-items: flex-start;
+}
+
+.container {
+    width: 100%;
+    height: 60.063rem;
+    display: grid;
+    grid-template-columns: 27rem 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+
+}
+
+aside {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+aside .asideImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+main {
+    background: pink;
+    width: 100%;
+    height: 100%;
+}
+
+
+footer {
+    background: var(--orange);
+    height: 3.938rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.25rem 0 12rem;
+}
+
+footer a {
+    margin-left: 1rem;
+}
+
+@media screen and (min-width: 769px) {}

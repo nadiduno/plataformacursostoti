@@ -15,8 +15,8 @@
 
 html,
 body {
-  color: var(--color1);
-  background-color: var(--color1);
+  color: var(--black);
+  background-color: var(--white);
 }
 
 html,
@@ -28,4 +28,19 @@ button {
   font-weight: 400;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: transparent;
+  color: var(--black);
+}
+
+.linkHover {
+  opacity: 1;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.linkHover:hover {
+  opacity: .7;
 }
