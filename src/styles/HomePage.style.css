@@ -16,13 +16,13 @@
 
 }
 
-aside {
+.sideBar {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-aside .asideImg {
+.sideImage {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -30,7 +30,7 @@ aside .asideImg {
     transform: scaleX(-1);
 }
 
-main {
+.containerCentral {
     width: 100%;
     height: 100%;
     display: grid;
@@ -61,7 +61,7 @@ main {
     color: var(--white);
 }
 
-.account {
+.textAccount {
     display: flex;
     justify-content: space-between;
     padding-top: 1.625rem;
@@ -86,7 +86,7 @@ main {
     font-weight: 700;
 }
 
-.boxForget {
+.textForget {
     width: 53.375rem;
 }
 
@@ -94,7 +94,7 @@ main {
 
     display: flex;
     justify-content: right;
-    Color: var(--violet);
+    color: var(--violet);
     margin-right: 0;
     font-size: 1.5rem;
     font-weight: 700;

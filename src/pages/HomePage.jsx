@@ -5,14 +5,14 @@ export function HomePage() {
     return (
         <div className="containerMain">
             <div className="container">
-                <aside>
+                <aside className="sideBar">
                     <img
+                        className="sideImage"
                         src="src\assets\asidephoto.svg"
                         alt=""
-                        className="asideImg"
                     />
                 </aside>
-                <main>
+                <main className="containerCentral">
                     <div className="boxOrange">
                         <div className="textWelcome">
                             <h1>Olá Toter!</h1>
@@ -21,7 +21,7 @@ export function HomePage() {
                         <div className="boxViolet">
                             Formulário com bootstrap
                         </div>
-                        <div className="account">
+                        <div className="textAccount">
                             <div>
                                 <p>Não tenho uma conta</p>
                                 <button className="buttonText textViolet linkHover">Criar conta</button>
@@ -33,7 +33,7 @@ export function HomePage() {
                         </div>
                     </div>
 
-                    <div className="boxForget">
+                    <div className="textForget">
                         <p className="textViolet linkHover">Esqueceu seus dados?</p>
                     </div>
                 </main>
