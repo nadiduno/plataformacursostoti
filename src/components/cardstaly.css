@@ -5,29 +5,3 @@
 height: 718rem;
 flex-shrink: 0;
 }
-.container{
-    color: #FFF;
-text-align: center;
-font-family: Yeseva One;
-font-size: 60rem;
-font-style: normal;
-font-weight: 400;
-line-height: 160%; /* 96px */
-}
-.layout{
-    width: 303rem;
-height: 142.492rem;
-flex-shrink: 0;
-}
-.styli{
-    border-radius: 0rem 0rem 12rem 12rem;
-background: #FFF;
-}
-.layout{width: 303rem;
-    height: 142.492rem;
-    flex-shrink: 0;
-
-}
-.styli{border-radius: 12rem 12rem 0rem 0rem;
-    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-}
