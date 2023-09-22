@@ -1,4 +1,5 @@
 import "../styles/Login.style.css"
+import "../styles/HomePage.style.css"
 
 export function Login() {
     return (
