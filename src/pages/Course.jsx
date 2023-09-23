@@ -4,8 +4,17 @@ import "../styles/HomePage.style.css"
 
 export function Course() {
     return (
-        <>
-            <h2>Login - Responsavel Tchuda</h2>
-        </>
+        
+     <div className="">
+        <aside className="">
+            img 
+      </aside>
+      <footer className="">
+       text 
+      </footer>
+
+      </div>
+        
+                  
     );
 }
