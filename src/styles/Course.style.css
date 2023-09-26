@@ -5,3 +5,35 @@
     height: 44.875rem;
     flex-shrink: 0;
 }
+
+.cardTop {
+    border-radius: 12px 12px 0px 0px;
+    width: 18.938rem;
+    height: 8.906rem;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textCard {
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:3.75rem;
+}
+
+.cardBottom {
+    width: 18.938rem;
+    height: 8.906rem;
+    border-radius: 0px 0px 12px 12px;
+    background: var(--white);
+
+}
