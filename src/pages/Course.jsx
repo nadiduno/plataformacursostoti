@@ -4,17 +4,17 @@ import "../styles/HomePage.style.css"
 
 export function Course() {
     return (
-        
-     <div className="">
-        <aside className="">
-            img 
-      </aside>
-      <footer className="">
-       text 
-      </footer>
 
-      </div>
-        
-                  
+        <div className="">
+            <aside className="">
+                img
+            </aside>
+            <footer className="">
+                text
+            </footer>
+
+        </div>
+
+
     );
 }
