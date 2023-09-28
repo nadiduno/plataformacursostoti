@@ -1,6 +1,6 @@
 export function Cards() {
     return (
-        <>
+        <section className={styles.Cards}>
             <img src="assets\LogoToti.svg" alt="" />
             <h1> Full Stack </h1>
             <div className="quadradolaranja">
@@ -20,5 +20,7 @@ export function Cards() {
                 <p>20</p>
                 <p>Aulas</p>
             </div>
-</>);
+</section>
+);
 }
+export default Cards
