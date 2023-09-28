@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import { HomePage } from './pages/HomePage'
-import { Login } from './Pages/Login'
 import { Course } from './Pages/Course'
 import { Lesson } from './Pages/Lesson'
+import { Login } from './pages/Login'
 
 export function Router() {
     return (
