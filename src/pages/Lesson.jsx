@@ -34,7 +34,7 @@ export function Lesson() {
             .then(resposta => {
 
                 console.log(resposta)
-                setLessons(resposta.lessons);
+                setLessons(resposta);
             })
             .catch(err => console.log('Erro de solicitação', err));
     };
