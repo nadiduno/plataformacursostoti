@@ -7,7 +7,7 @@ export function Login() {
             <div className="container">
                 <aside className="sideBar">
                     <img src="src\assets\LogoToti.svg" alt="" />
-                    <img className="sideImage"src="src\assets\asidephoto.svg"alt=""
+                    <img className="sideImage" src="src\assets\asidephoto.svg" alt=""
                     />
                 </aside>
                 <main className="containerCentral">
@@ -20,21 +20,21 @@ export function Login() {
                             <p>Peencha seus dados por favor</p>
                         </div>
                         <div className="boxViolet">
-                           <h2> Formulário com bootstrap</h2> <br></br>
+                            <h2> Formulário com bootstrap</h2> <br></br>
                             <div className="textInfo">
                                 <form>
                                     <label for="username">Nome de usuario ou E-mail:
                                     </label><br></br>
-                                    <input type="text"id="username"name="username">
+                                    <input type="text" id="username" name="username">
                                     </input><br></br>
-                                    <label  for="password"> Senha: </label><br></br>
+                                    <label for="password"> Senha: </label><br></br>
                                     <input type="password" id="password" name="password">
                                     </input>
 
                                 </form>
                             </div>
-                           
-                        </div> 
+
+                        </div>
                         <p><b>Se você ainda não tem cadastro</b></p>
                         <div className="textAccount">
                             <button className="buttonViolet linkHover">

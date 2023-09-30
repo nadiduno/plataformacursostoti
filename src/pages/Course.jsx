@@ -10,6 +10,7 @@ export function Course() {
                 <aside className="sideBar">
                     <img src="src\assets\LogoToti.svg" alt="" />
                 </aside>
+                <h1>Full Stack</h1>
                 <main className="containerCentral">
                     <div className="boxOrange">
                         <div className="card">
