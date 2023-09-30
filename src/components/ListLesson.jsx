@@ -1,6 +1,7 @@
 import { Trash, XSquare } from 'phosphor-react';
 import React, { useState } from 'react';
 import { ListGroup, Modal, Button } from 'react-bootstrap';
+import '../styles/Modal.style.css'
 
 export const ListLesson = (props) => {
 	const [showDetalhes, setShowDetalhes] = useState(false);
@@ -45,6 +46,8 @@ export const ListLesson = (props) => {
 									onClick={() => mostrarModalDetalhes(produto)}
 								>
 									{produto.title}
+									&nbsp;-&nbsp;
+									{produto.description}
 								</ListGroup.Item>
 								&nbsp;
 								<button className="buttonNone linkHover" onClick={() => mostrarModalDeletar(produto)} style={{ color: 'var(--red)' }} title="Eliminar">
@@ -56,27 +59,35 @@ export const ListLesson = (props) => {
 					})
 				}
 			</ListGroup>
-			<Modal show={showDetalhes} onHide={() => setShowDetalhes(false)} aria-labelledby="contained-modal-title-vcenter" centered>
-				<Modal.Header closeButton>
+			<Modal className="pageOpacity" show={showDetalhes} onHide={() => setShowDetalhes(false)} aria-labelledby="contained-modal-title-vcenter" centered>
+				<Modal.Header 	closeButton>
 					<Modal.Title>{linhaSelecionada.title}</Modal.Title>
 				</Modal.Header>
-				<Modal.Body>{linhaSelecionada.description}</Modal.Body>
+				<Modal.Body className="modalViolet">
+					{linhaSelecionada.description}
+					<br /><br />
+					Aula {linhaSelecionada.typelesson}
+					<br /><br />
+					Professor(a): {linhaSelecionada.teacher}
+				</Modal.Body>
+				{/* <Modal.Body className="modalViolet" >Aula {linhaSelecionada.typelesson}</Modal.Body> */}
+				{/* <Modal.Body className="modalViolet" >Professor(a): {linhaSelecionada.teacher}</Modal.Body> */}
 			</Modal>
 
-			<Modal show={showDeletar} onHide={() => setShowDeletar(false)} aria-labelledby="contained-modal-title-vcenter" centered>
+			<Modal className="pageOpacity" show={showDeletar} onHide={() => setShowDeletar(false)} aria-labelledby="contained-modal-title-vcenter" centered>
 				<Modal.Header closeButton>
 					<Modal.Title>Eliminar {linhaSelecionada.title} </Modal.Title>
 				</Modal.Header>
-				<Modal.Body>Você realmente deseja excluir esta aula? </Modal.Body>
+				<Modal.Body className="modalViolet">Você realmente deseja excluir esta aula?</Modal.Body>
 				<Modal.Footer>
 					<button className="buttonNone linkHover" style={{ color: 'var(--red)' }} onClick={() => deletarPorId()} title="Confirmar">
 						<Trash size={50} />
 					</button>
-					<button className="buttonNone linkHover" style={{ color: 'var(--gray-1)' }} onClick={() => setShowDeletar(false)} title="Cancelar">
+					<button className="buttonNone linkHover" style={{ color: 'var(--gray-4)' }} onClick={() => setShowDeletar(false)} title="Cancelar">
 						<XSquare size={50} />
 					</button>
 				</Modal.Footer>
-			</Modal>
+			</Modal >
 		</>
 	);
 };

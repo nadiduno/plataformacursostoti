@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Col, Form, InputGroup, Row, ListGroup, Modal, ButtonGroup } from 'react-bootstrap';
-import { ListLesson } from '../components/ListLesson';
 import { FilePlus, FileX, GithubLogo, InstagramLogo, LinkedinLogo, NotePencil, Plus, UserCircle, XSquare } from "phosphor-react"
+import { ListLesson } from '../components/ListLesson';
 import "../styles/HomePage.style.css"
-
 import "../styles/Lesson.style.css"
+import '../styles/Modal.style.css'
 
 export const Lesson = () => {
   const [lessons, setLessons] = useState([]);
@@ -35,7 +35,7 @@ export const Lesson = () => {
     if (form.checkValidity()) { // caso de sucesso
       setLessons(anterior => {
         let lessonsAntigos = anterior;
-        lessonsAntigos.push({ id: lessons.length + 1, title: state.title, description: state.description });
+        lessonsAntigos.push({ id: lessons.length + 1, title: state.title, description: state.description, teacher: state.teacher, typelesson: state.typelesson });
         return lessonsAntigos;
       });
       setShowAdicionar(false);
@@ -71,14 +71,17 @@ export const Lesson = () => {
           <img src="src\assets\LogoToti.svg" alt="" />
         </aside>
         <main className="containerCentral">
+          <div>
+            Sistema de Controle das Aulas
+          </div>
           <div className="boxOrange">
             <div style={{ padding: '30px' }}>
 
-              <button className="buttonViolet linkHover" onClick={adicionarLesson}>
+              <button className="buttonViolet linkHover" style={{ width: '100%' }} onClick={adicionarLesson}>
                 <NotePencil size={24} />
                 Adicionar Aula
               </button>
-              <InputGroup className="mb-3 pt-3">
+              <InputGroup className="mb-3 pt-5">
                 <InputGroup.Text id="basic-addon1">Buscar</InputGroup.Text>
                 <Form.Control
                   placeholder="Nome"
@@ -92,12 +95,12 @@ export const Lesson = () => {
                 lessons.length ? <ListLesson lista={lessons} /> : <></>
               }
 
-              <Modal show={showAdicionar} onHide={() => setShowAdicionar(false)} size="xs" aria-labelledby="contained-modal-title-vcenter" centered>
+              <Modal className="pageOpacity" show={showAdicionar} onHide={() => setShowAdicionar(false)} size="xs" aria-labelledby="contained-modal-title-vcenter" centered>
                 <Modal.Header closeButton>
                   <Modal.Title>Adicionar Aula</Modal.Title>
                 </Modal.Header>
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                  <Modal.Body>
+                  <Modal.Body className="modalViolet">
 
                     <Form.Group>
                       <Form.Label>Título da aula</Form.Label>
@@ -181,10 +184,10 @@ export const Lesson = () => {
 
                   </Modal.Body>
                   <Modal.Footer>
-                    <button className="buttonNone linkHover" style={{color: 'var(--violet)'}} title="Criar">
+                    <button className="buttonNone linkHover" style={{ color: 'var(--violet)' }} title="Criar">
                       <NotePencil size={50} />
                     </button>
-                    <button className="buttonNone linkHover" onClick={() => setShowAdicionar(false)} style={{color: 'var(--gray-1)'}} title="Cancelar">
+                    <button className="buttonNone linkHover" onClick={() => setShowAdicionar(false)} style={{ color: 'var(--gray-4)' }} title="Cancelar">
                       <XSquare size={50} />
                     </button>
                   </Modal.Footer>

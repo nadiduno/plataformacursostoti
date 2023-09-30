@@ -1,0 +1,9 @@
+.pageOpacity {
+  background: var(--gray-3);
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.modalViolet {
+  background: var(--violet);
+  color: var(--white);
+}
