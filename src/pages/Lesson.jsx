@@ -95,7 +95,7 @@ export const Lesson = () => {
                 lessons.length ? <ListLesson lista={lessons} /> : <></>
               }
 
-              <Modal className="pageOpacity" show={showAdicionar} onHide={() => setShowAdicionar(false)} size="xs" aria-labelledby="contained-modal-title-vcenter" centered>
+              <Modal className="pageOpacity" show={showAdicionar} onHide={() => setShowAdicionar(false)} aria-labelledby="contained-modal-title-vcenter" centered>
                 <Modal.Header closeButton>
                   <Modal.Title>Adicionar Aula</Modal.Title>
                 </Modal.Header>
