@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Col, Form, InputGroup, Row, ListGroup, Modal, ButtonGroup } from 'react-bootstrap';
 import { ListLesson } from '../components/ListLesson';
-import { GithubLogo, InstagramLogo, LinkedinLogo, NotePencil, Plus, UserCircle } from "phosphor-react"
+import { FilePlus, FileX, GithubLogo, InstagramLogo, LinkedinLogo, NotePencil, Plus, UserCircle, XSquare } from "phosphor-react"
 import "../styles/HomePage.style.css"
 
 import "../styles/Lesson.style.css"
@@ -15,6 +15,7 @@ export const Lesson = () => {
   useEffect(() => {
     trazerLista();
   }, []);
+
 
   const trazerLista = () => {
     fetch('http://localhost:9000/api/lessons/published')
@@ -62,6 +63,7 @@ export const Lesson = () => {
       .catch(err => console.log('Erro de solicitação', err));
   };
 
+
   return (
     <div className="containerMain">
       <div className="container">
@@ -71,7 +73,7 @@ export const Lesson = () => {
         <main className="containerCentral">
           <div className="boxOrange">
             <div style={{ padding: '30px' }}>
-              
+
               <button className="buttonViolet linkHover" onClick={adicionarLesson}>
                 <NotePencil size={24} />
                 Adicionar Aula
@@ -90,19 +92,20 @@ export const Lesson = () => {
                 lessons.length ? <ListLesson lista={lessons} /> : <></>
               }
 
-              <Modal show={showAdicionar} onHide={() => setShowAdicionar(false)}>
+              <Modal show={showAdicionar} onHide={() => setShowAdicionar(false)} size="xs" aria-labelledby="contained-modal-title-vcenter" centered>
                 <Modal.Header closeButton>
-                  <Modal.Title>Adicionar lesson</Modal.Title>
+                  <Modal.Title>Adicionar Aula</Modal.Title>
                 </Modal.Header>
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                   <Modal.Body>
+
                     <Form.Group>
-                      <Form.Label>Titulo</Form.Label>
+                      <Form.Label>Título da aula</Form.Label>
                       <InputGroup hasValidation>
                         <Form.Control
                           name="title"
                           type="text"
-                          placeholder="Titulo"
+                          placeholder="Digite o título da aula por favor"
                           onChange={handleChange}
                           required
                         />
@@ -111,13 +114,14 @@ export const Lesson = () => {
                         </Form.Control.Feedback>
                       </InputGroup>
                     </Form.Group>
+
                     <Form.Group className="pt-3">
-                      <Form.Label>Descrição</Form.Label>
+                      <Form.Label>Descrição da aula</Form.Label>
                       <InputGroup hasValidation>
                         <Form.Control
                           name="description"
                           type="text"
-                          placeholder="Descrição"
+                          placeholder="Digite a descrição da aula por favor"
                           onChange={handleChange}
                           required
                         />
@@ -126,10 +130,63 @@ export const Lesson = () => {
                         </Form.Control.Feedback>
                       </InputGroup>
                     </Form.Group>
+
+                    <Form.Group className="pt-3">
+                      <Form.Label>Nome do professor(a)</Form.Label>
+                      <InputGroup hasValidation>
+                        <Form.Control
+                          name="teacher"
+                          type="text"
+                          placeholder="Digite o nome do professor(a) por favor"
+                          onChange={handleChange}
+                          required
+                        />
+                        <Form.Control.Feedback type="invalid">
+                          Campo obrigatório.
+                        </Form.Control.Feedback>
+                      </InputGroup>
+                    </Form.Group>
+
+                    <Form.Group className="pt-3">
+                      <Form.Label>Tipo da Aula: Gravada / Ao Vivo</Form.Label>
+                      <InputGroup hasValidation>
+                        <Form.Control
+                          name="typelesson"
+                          type="text"
+                          placeholder="Digite o tipo da aula por favor"
+                          onChange={handleChange}
+                          required
+                        />
+                        <Form.Control.Feedback type="invalid">
+                          Campo obrigatório.
+                        </Form.Control.Feedback>
+                      </InputGroup>
+                    </Form.Group>
+
+                    <Form.Group className="pt-3">
+                      <Form.Label>Link da avaliação(a)</Form.Label>
+                      <InputGroup hasValidation>
+                        <Form.Control
+                          name="linkteste"
+                          type="text"
+                          placeholder="Digite o link da avaliação por favor"
+                          onChange={handleChange}
+                        // required
+                        />
+                        {/* <Form.Control.Feedback type="invalid">
+                          Campo obrigatório.
+                        </Form.Control.Feedback> */}
+                      </InputGroup>
+                    </Form.Group>
+
                   </Modal.Body>
                   <Modal.Footer>
-                    <Button variant="primary" type="submit">Criar</Button>
-                    <Button variant="secondary" onClick={() => setShowAdicionar(false)}>Cancelar</Button>
+                    <button className="buttonNone linkHover" style={{color: 'var(--violet)'}} title="Criar">
+                      <NotePencil size={50} />
+                    </button>
+                    <button className="buttonNone linkHover" onClick={() => setShowAdicionar(false)} style={{color: 'var(--gray-1)'}} title="Cancelar">
+                      <XSquare size={50} />
+                    </button>
                   </Modal.Footer>
                 </Form>
               </Modal>

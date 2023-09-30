@@ -1,4 +1,4 @@
-import { Trash } from 'phosphor-react';
+import { Trash, XSquare } from 'phosphor-react';
 import React, { useState } from 'react';
 import { ListGroup, Modal, Button } from 'react-bootstrap';
 
@@ -47,31 +47,34 @@ export const ListLesson = (props) => {
 									{produto.title}
 								</ListGroup.Item>
 								&nbsp;
-								<button className="buttonViolet linkHover" onClick={() => mostrarModalDeletar(produto)}>
-									<Trash size={24} />
-									Eliminar
+								<button className="buttonNone linkHover" onClick={() => mostrarModalDeletar(produto)} style={{ color: 'var(--red)' }} title="Eliminar">
+									<Trash size={40} />
 								</button>
-								
+
 							</div>
 						);
 					})
 				}
 			</ListGroup>
-			<Modal show={showDetalhes} onHide={() => setShowDetalhes(false)}>
+			<Modal show={showDetalhes} onHide={() => setShowDetalhes(false)} aria-labelledby="contained-modal-title-vcenter" centered>
 				<Modal.Header closeButton>
 					<Modal.Title>{linhaSelecionada.title}</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>{linhaSelecionada.description}</Modal.Body>
 			</Modal>
 
-			<Modal show={showDeletar} onHide={() => setShowDeletar(false)}>
+			<Modal show={showDeletar} onHide={() => setShowDeletar(false)} aria-labelledby="contained-modal-title-vcenter" centered>
 				<Modal.Header closeButton>
-					<Modal.Title>Deletar Produto</Modal.Title>
+					<Modal.Title>Eliminar {linhaSelecionada.title} </Modal.Title>
 				</Modal.Header>
-				<Modal.Body>Você realmente deseja excluir esse produto?</Modal.Body>
+				<Modal.Body>Você realmente deseja excluir esta aula? </Modal.Body>
 				<Modal.Footer>
-					<Button variant="primary" onClick={() => deletarPorId()}>Confirmar</Button>
-					<Button variant="secondary" onClick={() => setShowDeletar(false)}>Cancelar</Button>
+					<button className="buttonNone linkHover" style={{ color: 'var(--red)' }} onClick={() => deletarPorId()} title="Confirmar">
+						<Trash size={50} />
+					</button>
+					<button className="buttonNone linkHover" style={{ color: 'var(--gray-1)' }} onClick={() => setShowDeletar(false)} title="Cancelar">
+						<XSquare size={50} />
+					</button>
 				</Modal.Footer>
 			</Modal>
 		</>

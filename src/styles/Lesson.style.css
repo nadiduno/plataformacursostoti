@@ -1,3 +1,6 @@
-.colorButton {
-    background-color: var(--violet);
-}
+.buttonNone {
+    border: none;
+    background: none;
+    padding: 0;
+    outline: none;
+  }
