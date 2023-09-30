@@ -30,7 +30,6 @@ export function Login() {
                                     <label  for="password"> Senha: </label><br></br>
                                     <input type="password" id="password" name="password">
                                     </input>
-
                                 </form>
                             </div>
                            
