@@ -1,0 +1,39 @@
+footer {
+    background: var(--orange);
+    /* background: linear-gradient(to right, transparent 5%,  var(--orange), transparent 95%); */
+    max-width: 70rem;
+    margin: 1rem auto;
+    padding: .5rem;
+}
+
+footer span {
+    font-size: 70%;
+    color: var(--gray-1);
+}
+
+footer a{
+    padding: 0 1rem;
+}
+.containerFood{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    gap: .5rem;
+}
+
+@media screen and (min-width: 769px) {
+
+    .html,
+    footer span {
+        font-size: 100%;
+    }
+
+    footer {
+        height: 3.938rem;
+    }
+    .containerFood{
+        display: flex;
+        justify-content: space-between;
+        padding-top: .75rem;
+    }
+}

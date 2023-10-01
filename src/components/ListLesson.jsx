@@ -1,4 +1,4 @@
-import { Trash, XSquare } from 'phosphor-react';
+import { NotePencil, Trash, XSquare } from 'phosphor-react';
 import React, { useState } from 'react';
 import { ListGroup, Modal, Button } from 'react-bootstrap';
 import '../styles/Modal.style.css'
@@ -50,6 +50,9 @@ export const ListLesson = (props) => {
 									{produto.description}
 								</ListGroup.Item>
 								&nbsp;
+								<button className="buttonNone linkHover" style={{ color: 'var(--violet)' }} title="Atualizar">
+									<NotePencil size={40} />
+								</button>
 								<button className="buttonNone linkHover" onClick={() => mostrarModalDeletar(produto)} style={{ color: 'var(--red)' }} title="Eliminar">
 									<Trash size={40} />
 								</button>
@@ -60,7 +63,7 @@ export const ListLesson = (props) => {
 				}
 			</ListGroup>
 			<Modal className="pageOpacity" show={showDetalhes} onHide={() => setShowDetalhes(false)} aria-labelledby="contained-modal-title-vcenter" centered>
-				<Modal.Header 	closeButton>
+				<Modal.Header closeButton>
 					<Modal.Title>{linhaSelecionada.title}</Modal.Title>
 				</Modal.Header>
 				<Modal.Body className="modalViolet">
@@ -70,8 +73,6 @@ export const ListLesson = (props) => {
 					<br /><br />
 					Professor(a): {linhaSelecionada.teacher}
 				</Modal.Body>
-				{/* <Modal.Body className="modalViolet" >Aula {linhaSelecionada.typelesson}</Modal.Body> */}
-				{/* <Modal.Body className="modalViolet" >Professor(a): {linhaSelecionada.teacher}</Modal.Body> */}
 			</Modal>
 
 			<Modal className="pageOpacity" show={showDeletar} onHide={() => setShowDeletar(false)} aria-labelledby="contained-modal-title-vcenter" centered>
