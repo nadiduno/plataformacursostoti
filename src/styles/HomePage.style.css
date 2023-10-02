@@ -1,84 +1,3 @@
-.containerMain {
-    margin: 0 auto;
-    padding-top: 4rem;
-    max-width: 80vi;
-    min-height: 100vw;
-    align-items: flex-start;
-}
-
-.container1 {
-    width: 100%;
-    height: 60.063rem;
-    display: grid;
-    grid-template-columns: 27rem 1fr;
-    gap: 2rem;
-    align-items: flex-start;
-
-}
-
-.container {
-    width: 100%;
-    height: 60.063rem;
-    display: grid;
-    grid-template-columns: 11.75rem 1fr;
-    gap: 2rem;
-    align-items: flex-start;
-
-}
-
-.sideBar {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.sideImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-}
-
-.containerCentral {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-items: center;
-    padding-top: 11.5rem;
-}
-
-.boxOrange1 {
-    width: 53.375rem;
-    height: 34.813rem;
-    background: rgba(232, 79, 48, 0.30);
-    border-radius: 20px;
-    padding: 2.75rem 5.875rem 2.375rem 5.875rem;
-}
-
-.boxOrange {
-    width: 66.75rem;
-    height: 47.188rem;
-    background: rgba(232, 79, 48, 0.30);
-    border-radius: 20px;
-    padding: 2.75rem 5.875rem 2.375rem 5.875rem;
-}
-
-.textWelcome h1 {
-    padding-bottom: .75rem;
-}
-
-.boxViolet {
-    width: 41.625rem;
-    height: 17.313rem;
-    background: var(--violet);
-    border-radius: 20px;
-    margin-top: 2.375rem;
-    padding-top: 2.625rem;
-    padding-left: 5rem;
-    color: var(--white);
-}
-
 .textAccount {
     display: flex;
     justify-content: space-between;
@@ -92,6 +11,7 @@
     padding-top: .75rem;
 }
 
+/* 
 .buttonViolet {
     display: flex;
     width: 16rem;
@@ -102,7 +22,7 @@
     background: var(--violet);
     color: var(--white);
     font-weight: 700;
-}
+} */
 
 .textForget {
     width: 53.375rem;
@@ -118,17 +38,28 @@
     font-weight: 700;
 }
 
-footer {
-    background: var(--orange);
-    height: 3.938rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1.25rem 0 12rem;
+.container1 {
+    width: 100%;
+    height: 60.063rem;
+    display: grid;
+    grid-template-columns: 27rem 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
+.containerCentral {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    padding-top: 11.5rem;
 }
 
-footer a {
-    margin-left: 1rem;
+.boxOrange1 {
+    width: 53.375rem;
+    height: 34.813rem;
+    background: var(--orange-2);
+    border-radius: 20px;
+    padding: 2.75rem 5.875rem 2.375rem 5.875rem;
 }
 
 @media screen and (min-width: 769px) {}

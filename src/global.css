@@ -3,10 +3,11 @@
   --black: #000;
   --violet: #3D265E;
   --orange: #E84F30;
+  --orange-2:rgba(232, 79, 48, 0.30);
   --gray-1: #D9D9D9;
   --gray-2: #1F1F1F;
   --gray-3: rgba(255, 255, 255, 0.8);
-  --gray-4: rgba(52, 50, 50, 0.8);
+  --gray-4: rgba(104, 103, 103, 0.8);
   --red: #ff0000;
 }
 
@@ -39,9 +40,10 @@ button {
   -webkit-font-smoothing: antialiased;
 }
 
-a {
+a,footer a {
   text-decoration: transparent;
   color: var(--black);
+  font-weight: 700;
 }
 
 .linkHover {
