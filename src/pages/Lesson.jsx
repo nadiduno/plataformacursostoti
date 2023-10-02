@@ -61,22 +61,44 @@ export const Lesson = () => {
     });
   };
 
-  const buscarlesson = e => {
-    fetch(`https://dummyjson.com/products/search?q=${e.target.value}`)
-      .then(data => data.json())
-      .then(resposta => {
-        setLessons(resposta.products);
-      })
-      .catch(err => console.log('Erro de solicitação', err));
+  const criarLesson = () => {
+    const parametros = {
+      title: title,
+      description: description,
+      teacher: teacher,
+      typelesson: typelesson,
+      linkteste: linkteste,
+      published: published
+    };
+
+    fetch('http://localhost:9000/api/lessons', {
+      method: "POST",
+      body: JSON.stringify(parametros),
+      headers: {"Content-type": "application/json; charset=UTF-8"}
+    })
+    .then(data => data.json()) 
+    .then(response => trazerLista())
+    .catch(err => console.log(err));
   };
+
+  // const buscarlesson = e => {
+  //   // fetch(`https://dummyjson.com/products/search?q=${e.target.value}`)
+  //   // http://localhost:9000/api/lessons/
+  //   fetch(`https://localhost:9000/api/search?q=${e.target.value}`)
+
+  //     .then(data => data.json())
+  //     .then(resposta => {
+  //       setLessons(resposta);
+  //     })
+  //     .catch(err => console.log('Erro de solicitação', err));
+  // };
 
   return (
     <>
       <img className='photo' src="src/assets/FotoToti1.svg" alt="" />
-      
+
       <div className='containerMain'>
         <Siderbar2 />
-        {/* <Photos /> */}
         <main>
           <Title text='Sistema de Controle das Aulas' />
           <div className="boxOrange">
@@ -84,7 +106,8 @@ export const Lesson = () => {
               <PlusCircle size={30} />
               Adicionar Aula
             </button>
-            <InputGroup className="mb-3 pt-5">
+            
+            {/* <InputGroup className="mb-3 pt-5">
               <InputGroup.Text id="basic-addon1">
                 <MagnifyingGlass size={16} />
                 Buscar
@@ -95,7 +118,7 @@ export const Lesson = () => {
                 aria-describedby="basic-addon1"
                 onChange={(e) => buscarlesson(e)}
               />
-            </InputGroup>
+            </InputGroup> */}
 
             {
               lessons.length ? <ListLesson lista={lessons} /> : <></>
@@ -190,7 +213,7 @@ export const Lesson = () => {
 
                 </Modal.Body>
                 <Modal.Footer>
-                  <button className="buttonNone linkHover" style={{ color: 'var(--violet)' }} title="Criar">
+                  <button className="buttonNone linkHover" onClick={criarLesson} style={{ color: 'var(--violet)' }} title="Criar">
                     <PlusCircle size={40} />
                   </button>
                   <button className="buttonNone linkHover" onClick={() => setShowAdicionar(false)} style={{ color: 'var(--gray-4)' }} title="Cancelar">
@@ -202,7 +225,7 @@ export const Lesson = () => {
           </div>
         </main>
       </div>
-      
+
       <FooterPage />
     </>
   );

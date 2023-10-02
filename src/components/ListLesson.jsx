@@ -1,6 +1,6 @@
-import { NotePencil, Trash, XSquare } from 'phosphor-react';
-import React, { useState } from 'react';
-import { ListGroup, Modal, Button } from 'react-bootstrap';
+import React, { useState } from 'react'
+import { NotePencil, Trash, XSquare } from 'phosphor-react'
+import { ListGroup, Modal } from 'react-bootstrap'
 import '../styles/Modal.style.css'
 
 export const ListLesson = (props) => {
@@ -9,24 +9,24 @@ export const ListLesson = (props) => {
 	const [linhaSelecionada, setLinhaSelecionada] = useState({});
 	const [lista, setLista] = useState(props.lista);
 
-	const mostrarModalDetalhes = (produto) => {
-		setLinhaSelecionada(produto);
+	const mostrarModalDetalhes = (lesson) => {
+		setLinhaSelecionada(lesson);
 		setShowDetalhes(true);
 	};
 
-	const mostrarModalDeletar = (produto) => {
-		setLinhaSelecionada(produto);
+	const mostrarModalDeletar = (lesson) => {
+		setLinhaSelecionada(lesson);
 		setShowDeletar(true);
 	};
 
 	const deletarPorId = () => {
-		fetch(`https://dummyjson.com/products/${linhaSelecionada.id}`, {
+		fetch(`http://localhost:9000/api/lessons/${linhaSelecionada.id}`, {
 			method: 'DELETE'
 		})
 			.then(data => data.json())
 			.then(resposta => {
 				setLista(listaAnterior => {
-					return listaAnterior.filter(produto => produto.id !== linhaSelecionada.id);
+					return listaAnterior.filter(lesson => lesson.id !== linhaSelecionada.id);
 				});
 			})
 			.catch(err => console.log('Erro de solicitação', err));
@@ -37,23 +37,23 @@ export const ListLesson = (props) => {
 		<>
 			<ListGroup>
 				{
-					lista.map(produto => {
+					lista.map(lesson => {
 						return (
-							<div style={{ display: 'flex', margin: '5px 0' }}>
+							<div style={{ display: 'flex', margin: '16px 0' }}>
 								<ListGroup.Item
-									key={produto.id}
+									key={lesson.id}
 									action
-									onClick={() => mostrarModalDetalhes(produto)}
+									onClick={() => mostrarModalDetalhes(lesson)}
 								>
-									{produto.title}
+									{lesson.title}
 									&nbsp;-&nbsp;
-									{produto.description}
+									{lesson.description}
 								</ListGroup.Item>
 								&nbsp;
 								<button className="buttonNone linkHover" style={{ color: 'var(--violet)' }} title="Atualizar">
 									<NotePencil size={30} />
 								</button>
-								<button className="buttonNone linkHover" onClick={() => mostrarModalDeletar(produto)} style={{ color: 'var(--red)' }} title="Eliminar">
+								<button className="buttonNone linkHover" onClick={() => mostrarModalDeletar(lesson)} style={{ color: 'var(--red)' }} title="Eliminar">
 									<Trash size={30} />
 								</button>
 

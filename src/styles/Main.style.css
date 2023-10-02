@@ -12,6 +12,7 @@ body {
     height: 100vh;
     z-index: 0;
     padding-top: 26rem;
+    bottom: 0;
 }
 
 
