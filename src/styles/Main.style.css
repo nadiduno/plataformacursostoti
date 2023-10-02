@@ -12,12 +12,10 @@
 
 
 .boxOrange {
-    /* width: 66.75rem; */
-    min-height: 26rem;
+    min-height: 27rem;
     width: 100%;
     background: var(--orange-2);
     border-radius: 14px;
-    /* padding: 2.75rem 5.875rem 2.375rem 5.875rem; */
     padding: 1rem;
 }
 

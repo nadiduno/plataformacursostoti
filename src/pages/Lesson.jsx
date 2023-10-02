@@ -69,7 +69,6 @@ export const Lesson = () => {
       .catch(err => console.log('Erro de solicitação', err));
   };
 
-
   return (
     <>
       <div className='containerMain'>
@@ -77,12 +76,16 @@ export const Lesson = () => {
         <main>
           <Title text='Sistema de Controle das Aulas' />
           <div className="boxOrange">
-            <button className="buttonViolet linkHover" style={{ width: '100%' }} onClick={adicionarLesson}>
+            <button className="buttonViolet buttonVioletBig linkHover" onClick={adicionarLesson}>
               <PlusCircle size={30} />
               Adicionar Aula
             </button>
             <InputGroup className="mb-3 pt-5">
-              <InputGroup.Text id="basic-addon1"><MagnifyingGlass size={30} />&nbsp;Buscar</InputGroup.Text>
+              <InputGroup.Text id="basic-addon1">
+                <MagnifyingGlass size={16} />
+            
+                Buscar
+              </InputGroup.Text>
               <Form.Control
                 placeholder="Digite o título da aula por favor"
                 aria-label="nome"
