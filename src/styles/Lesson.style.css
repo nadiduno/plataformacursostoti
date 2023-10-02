@@ -1,7 +1,11 @@
+.lessonPage{
+  position: relative;
+}
+
 .buttonVioletBig {
   width: 100%;
   height: 2rem;
-  font-size: 80%;
+  font-size: 87.5%;
 }
 
 .buttonNone {

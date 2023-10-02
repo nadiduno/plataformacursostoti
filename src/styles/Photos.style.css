@@ -1,0 +1,25 @@
+.fundo {
+    position: relative;
+}
+
+.backgroundPhoto {
+    position: absolute;
+
+    /* width: 100%; */
+    /* height: 100vh;  */
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.backgroundPhoto1 {
+    bottom: 0;
+    left: 0;
+    background-image: url('../assets/FotoToti1.svg');
+}
+
+.backgroundPhoto2 {
+    top: 0;
+    right: 0;
+    background-image: url('../assets/FotoToti2.svg');
+}

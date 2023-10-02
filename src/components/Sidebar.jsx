@@ -15,7 +15,7 @@ export function Siderbar2(){
         <aside className="sideBar">
           <img 
             className="logoToti"
-            src="src\assets\LogoToti.svg" 
+            src="src/assets/LogoToti.svg" 
             alt="" 
           />
           <GeometricShapes />

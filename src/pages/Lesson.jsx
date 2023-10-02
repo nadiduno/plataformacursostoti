@@ -10,6 +10,7 @@ import { Title } from '../components/Title'
 import '../styles/Main.style.css'
 import '../styles/Lesson.style.css'
 import '../styles/Modal.style.css'
+import { Photos } from '../components/Photos'
 
 
 export const Lesson = () => {
@@ -71,8 +72,11 @@ export const Lesson = () => {
 
   return (
     <>
+      <img className='photo' src="src/assets/FotoToti1.svg" alt="" />
+      
       <div className='containerMain'>
         <Siderbar2 />
+        {/* <Photos /> */}
         <main>
           <Title text='Sistema de Controle das Aulas' />
           <div className="boxOrange">
@@ -83,7 +87,6 @@ export const Lesson = () => {
             <InputGroup className="mb-3 pt-5">
               <InputGroup.Text id="basic-addon1">
                 <MagnifyingGlass size={16} />
-            
                 Buscar
               </InputGroup.Text>
               <Form.Control
@@ -198,8 +201,8 @@ export const Lesson = () => {
             </Modal>
           </div>
         </main>
-        {/* </div> */}
       </div>
+      
       <FooterPage />
     </>
   );
