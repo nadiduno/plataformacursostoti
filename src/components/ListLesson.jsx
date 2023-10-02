@@ -51,10 +51,10 @@ export const ListLesson = (props) => {
 								</ListGroup.Item>
 								&nbsp;
 								<button className="buttonNone linkHover" style={{ color: 'var(--violet)' }} title="Atualizar">
-									<NotePencil size={40} />
+									<NotePencil size={30} />
 								</button>
 								<button className="buttonNone linkHover" onClick={() => mostrarModalDeletar(produto)} style={{ color: 'var(--red)' }} title="Eliminar">
-									<Trash size={40} />
+									<Trash size={30} />
 								</button>
 
 							</div>
@@ -82,10 +82,10 @@ export const ListLesson = (props) => {
 				<Modal.Body className="modalViolet">Você realmente deseja excluir esta aula?</Modal.Body>
 				<Modal.Footer>
 					<button className="buttonNone linkHover" style={{ color: 'var(--red)' }} onClick={() => deletarPorId()} title="Confirmar">
-						<Trash size={50} />
+						<Trash size={40} />
 					</button>
 					<button className="buttonNone linkHover" style={{ color: 'var(--gray-4)' }} onClick={() => setShowDeletar(false)} title="Cancelar">
-						<XSquare size={50} />
+						<XSquare size={40} />
 					</button>
 				</Modal.Footer>
 			</Modal >

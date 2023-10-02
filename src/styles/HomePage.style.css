@@ -38,4 +38,28 @@
     font-weight: 700;
 }
 
+.container1 {
+    width: 100%;
+    height: 60.063rem;
+    display: grid;
+    grid-template-columns: 27rem 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
+.containerCentral {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    padding-top: 11.5rem;
+}
+
+.boxOrange1 {
+    width: 53.375rem;
+    height: 34.813rem;
+    background: var(--orange-2);
+    border-radius: 20px;
+    padding: 2.75rem 5.875rem 2.375rem 5.875rem;
+}
+
 @media screen and (min-width: 769px) {}

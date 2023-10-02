@@ -1,0 +1,15 @@
+.texViolet {
+    color: var(--violet);
+    text-align: center;
+    padding-top: .75rem;
+}
+
+.texViolet h1 {
+    font-size: 16px;
+}
+
+@media screen and (min-width: 769px) {
+    .texViolet h1 {
+        font-size: 36px;
+    }
+}
