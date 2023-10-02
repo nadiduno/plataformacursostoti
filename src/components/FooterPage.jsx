@@ -4,7 +4,7 @@ import '../styles/FooterPage.style.css'
 export function FooterPage() {
     return (
         <footer>
-            <div className="containerFood">
+            <div className="containerFooter">
             <a
                 href="https://totidiversidade.com.br/"
                 target="_blank"

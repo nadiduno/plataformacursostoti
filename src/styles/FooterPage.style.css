@@ -1,9 +1,8 @@
 footer {
     background: var(--orange);
-    /* background: linear-gradient(to right, transparent 5%,  var(--orange), transparent 95%); */
-    max-width: 70rem;
     margin: 1rem auto;
-    padding: .5rem;
+    padding: .25rem;
+    font-size: 87.5%;
 }
 
 footer span {
@@ -25,14 +24,13 @@ footer a{
 @media screen and (min-width: 769px) {
 
     .html,
-    footer span {
+    footer, footer span {
         font-size: 100%;
     }
-
     footer {
         height: 3.938rem;
     }
-    .containerFood{
+    .containerFooter{
         display: flex;
         justify-content: space-between;
         padding-top: .75rem;
