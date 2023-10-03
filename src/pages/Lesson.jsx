@@ -16,7 +16,7 @@ import { Photos } from '../components/Photos'
 export const Lesson = () => {
   const [lessons, setLessons] = useState([]);
   const [showAdicionar, setShowAdicionar] = useState(false);
-  const [state, setState] = useState({ title: '', description: '' });
+  const [state, setState] = useState({ title: '', description: '', teacher: '',  typelesson: '',linkteste: ''});
   const [validated, setValidated] = useState(false);
 
   useEffect(() => {
@@ -41,10 +41,9 @@ export const Lesson = () => {
     const form = event.currentTarget;
     if (form.checkValidity()) { // caso de sucesso
       setLessons(anterior => {
-        let lessonsAntigos = anterior;
-        lessonsAntigos.push({ id: lessons.length + 1, title: state.title, description: state.description, teacher: state.teacher, typelesson: state.typelesson });
-        return lessonsAntigos;
+        criarLesson();
       });
+      
       setShowAdicionar(false);
     }
     event.preventDefault();
@@ -61,7 +60,7 @@ export const Lesson = () => {
     });
   };
 
-  const criarLesson = () => {
+  const criarLesson = async () => {
     const parametros = {
       title: title,
       description: description,
@@ -70,21 +69,18 @@ export const Lesson = () => {
       linkteste: linkteste,
       published: published
     };
-
-    fetch('http://localhost:9000/api/lessons', {
+    await fetch('http://localhost:9000/api/lessons', {
       method: "POST",
       body: JSON.stringify(parametros),
-      headers: {"Content-type": "application/json; charset=UTF-8"}
+      headers: { "Content-type": "application/json; charset=UTF-8" }
     })
-    .then(data => data.json()) 
-    .then(response => trazerLista())
-    .catch(err => console.log(err));
+      .then(data => data.json())
+      .then(response => trazerLista())
+      .catch(err => console.log(err));
   };
 
   // const buscarlesson = e => {
-  //   // fetch(`https://dummyjson.com/products/search?q=${e.target.value}`)
-  //   // http://localhost:9000/api/lessons/
-  //   fetch(`https://localhost:9000/api/search?q=${e.target.value}`)
+  //   fetch(`http://localhost:9000/api/lessons/search?q=${e.target.value}`)
 
   //     .then(data => data.json())
   //     .then(resposta => {
@@ -94,10 +90,10 @@ export const Lesson = () => {
   // };
 
   return (
-    <>
-      <img className='photo' src="src/assets/FotoToti1.svg" alt="" />
+    <div className='containerMain'>
+      {/* <img className='photo' src="src/assets/FotoToti1.svg" alt="" /> */}
 
-      <div className='containerMain'>
+      <div className='container'>
         <Siderbar2 />
         <main>
           <Title text='Sistema de Controle das Aulas' />
@@ -106,7 +102,7 @@ export const Lesson = () => {
               <PlusCircle size={30} />
               Adicionar Aula
             </button>
-            
+
             {/* <InputGroup className="mb-3 pt-5">
               <InputGroup.Text id="basic-addon1">
                 <MagnifyingGlass size={16} />
@@ -213,7 +209,7 @@ export const Lesson = () => {
 
                 </Modal.Body>
                 <Modal.Footer>
-                  <button className="buttonNone linkHover" onClick={criarLesson} style={{ color: 'var(--violet)' }} title="Criar">
+                  <button className="buttonNone linkHover" onClick={() => setShowAdicionar(true)} style={{ color: 'var(--violet)' }} title="Criar">
                     <PlusCircle size={40} />
                   </button>
                   <button className="buttonNone linkHover" onClick={() => setShowAdicionar(false)} style={{ color: 'var(--gray-4)' }} title="Cancelar">
@@ -225,9 +221,8 @@ export const Lesson = () => {
           </div>
         </main>
       </div>
-
       <FooterPage />
-    </>
+    </div>
   );
 };
 

@@ -37,7 +37,7 @@
 @media screen and (min-width: 769px) {
     .displayShapes {
         display: grid;
-        margin-top: -11rem;
+        margin-top: -8rem;
     }
 
     .shapes {

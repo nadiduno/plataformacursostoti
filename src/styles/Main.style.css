@@ -15,11 +15,16 @@ body {
     bottom: 0;
 }
 
-
 .containerMain {
     max-width: 70rem;
+    min-height: 100vh;
     margin: 0 auto;
     padding: 1rem;
+}
+
+.container {
+    max-width: 100%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -62,23 +67,26 @@ body {
         font-size: 100%;
     }
 
-    body {
+    .containerMain {
         background-image: url('src/assets/FotoToti2.svg');
         background-size: cover;
         background-repeat: no-repeat;
         z-index: -1;
         background-size: 25%;
         background-position: top right;
+        border: solid 1px var(--orange);
+        border-bottom: none;
+        border-radius: 150px 0 30px 0;
     }
 
-    .containerMain {
+    .container {
         margin-top: 4rem;
         grid-template-columns: 256px 1fr;
         align-items: flex-start;
     }
 
     .boxOrange {
-        min-height: 47.188rem;
+        min-height: 77vh;
         margin-top: 3rem;
         padding: 2.75rem 5.875rem 2.375rem 5.875rem;
     }
