@@ -1,68 +1,13 @@
-.quadradolaranja {
-    background: rgba(232, 79, 48, 0.30);
-    border-radius: 20px;
-    width: 66.813rem;
-    height: 44.875rem;
-    flex-shrink: 0;
-}
-
-.cardTop {
-    border-radius: 12px 12px 0px 0px;
-    width: 18.938rem;
-    height: 8.906rem;
-    flex-shrink: 0;
-    overflow: hidden;
-    position: relative;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.textCard {
-    position: absolute;
-    width: 100%;
-    top: 20%;
-    color: var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3.75rem;
-}
-
-.cardBottom {
-    width: 18.938rem;
-    height: 8.906rem;
-    border-radius: 0px 0px 12px 12px;
-    background: var(--white);
-
-}
-
-.description1 {
-    padding: 1.25rem 1.063rem;
-    color: var(--violet);
-    font-size: 1.375rem;
-    font-weight: 700;
-}
-
-.description2 {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1.75rem;
-}
-
-.silhouetteGray {
-    width: 58px;
-    height: 58px;
-    border-radius: 20px 0px;
-    background: var(--gray-1);
+.containerCard {
     display: grid;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-items: center;
 }
 
-.silhouetteGray p {
-    color: var(--orange);
-    font-size: 1.875rem;
+@media screen and (min-width: 769px) {
+    .containerCard {
+        grid-template-columns: 2fr auto;
+        gap: 3rem;
+    }
 }

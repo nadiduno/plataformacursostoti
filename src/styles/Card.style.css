@@ -1,7 +1,64 @@
-.cardCourse {
-    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+.card {
+    width: 18rem;
+    height: 18rem;
+}
+
+.textCard {
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.75rem;
+}
+
+.cardTop {
     border-radius: 12px 12px 0px 0px;
-    width: 303px;
-    height: 142.492px;
+    width: 100%;
+    height: 50%;
     flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardBottom {
+    width: 100%;
+    height: 50%;
+    border-radius: 0px 0px 12px 12px;
+    background: var(--white);
+
+}
+
+.description1 {
+    color: var(--violet);
+    font-size: 1.375rem;
+    font-weight: 700;
+}
+
+.description2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.75rem;
+}
+
+.silhouetteGray {
+    width: 58px;
+    height: 58px;
+    border-radius: 20px 0px;
+    background: var(--gray-1);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.silhouetteGray p {
+    color: var(--orange);
+    font-size: 1.875rem;
 }
