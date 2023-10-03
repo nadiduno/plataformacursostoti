@@ -1,19 +1,32 @@
-# React + Vite
-
-<h1>Projeto em construção: Plataforma de aula da TOTI<h1>
- <h2>Contribuidores
-<br />
-
-[Jacky Mathieu](https://github.com/123stack)
+[![Author](https://img.shields.io/badge/Dev-Jacky%20Mathieu-blueviolet%20)](https://github.com/123stack)
+[![Author](https://img.shields.io/badge/Dev-Tchuda%20Bidenguilté-blueviolet%20)](https://github.com/Oneboy97)
+[![Author](https://img.shields.io/badge/Dev-Nadi%20Duno-blueviolet%20)](https://github.com/nadiduno/)
 
 <br />
 
-[Tchuda  Bidenguilté](https://github.com/Oneboy97)
+# React.js Vite
 
-<br />
+<hr>
 
-[Nadi Duno](https://github.com/nadiduno/)
+# Tecnologias implementadas
 
+[ReactJS](https://legacy.reactjs.org/) | [Vite](https://vitejs.dev/) |  [NPM](https://www.npmjs.com/) | [React Bootstrap](https://react-bootstrap.netlify.app/)
+
+<hr>
+
+## Project setup
+```bash
+npm install
+```
+
+### Run
+```bash
+npm run dev
+```
+
+<hr>
+
+<!-- 
 Bootcamp Full stack - Turma 31 [Toti Diversidade](https://totidiversidade.com.br/)
 <br />
 <h2>Descrição
@@ -61,5 +74,15 @@ Bootcamp Full stack - Turma 31 [Toti Diversidade](https://totidiversidade.com.br
 <h3>Este projeto ainda não é licenciado, é apenas um trabalho final do curso que futuramente vai fazer muito sucesso.
 
 <h2>Contato
-<h3>Para mais informações ou suporte, entre em contato conosco em [educacao@totidiversidade.com.br].
+<h3>Para mais informações ou suporte, entre em contato conosco em [educacao@totidiversidade.com.br]. -->
 
+# BootCamp Full Stack
+
+Link do server do projeto 🔗 [Backend](https://github.com/nadiduno/servertoti)
+
+Professor [Lucas](https://github.com/lucastoti)
+
+[Toti Diversidade](https://totidiversidade.com.br/)
+
+<💜 />
+[Jacky Mathieu](https://github.com/123stack) | [Tchuda  Bidenguilté](https://github.com/Oneboy97) | [Nadi Duno](https://github.com/nadiduno/)
