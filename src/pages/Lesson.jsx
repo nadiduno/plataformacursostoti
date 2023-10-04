@@ -17,7 +17,7 @@ import { TitlePage } from '../components/TitlePage'
 export const Lesson = () => {
   const [lessons, setLessons] = useState([]);
   const [showAdicionar, setShowAdicionar] = useState(false);
-  const [state, setState] = useState({ title: '', description: '', teacher: '',  typelesson: '',linkteste: ''});
+  const [state, setState] = useState({ title: '', description: '', teacher: '', typelesson: '', linkteste: '' });
   const [validated, setValidated] = useState(false);
 
   useEffect(() => {
@@ -53,11 +53,6 @@ export const Lesson = () => {
       } catch (error) {
         console.log('Erro ao criar aula', error);
       }
-      // setLessons(anterior => {
-      //   criarLesson();
-      // });
-      
-      // setShowAdicionar(false);
     }
     setValidated(true);
   };
@@ -72,14 +67,19 @@ export const Lesson = () => {
   };
 
   const criarLesson = async () => {
+    const modifiedState = { ...state, published: true };
     await fetch('http://localhost:9000/api/lessons', {
       method: "POST",
-      body: JSON.stringify(state),
+      body: JSON.stringify(modifiedState),
       headers: { "Content-type": "application/json; charset=UTF-8" }
     })
+
       .then(data => data.json())
-      .then(response => trazerLista())
-      .catch(err => console.log('Error em criar aula',err));
+      .then(response => {
+        trazerLista();
+        console.log('Resposta da solicitação POST:', response);
+      })
+      .catch(err => console.log('Error em criar aula', err));
   };
 
   // const buscarlesson = e => {
@@ -200,19 +200,19 @@ export const Lesson = () => {
                       <Form.Control
                         name="linkteste"
                         type="text"
-                        placeholder="Digite o link da avaliação por favor"
+                        placeholder="Cole o link do vídeo por favor"
                         onChange={handleChange}
-                      // required
+                        required
                       />
-                      {/* <Form.Control.Feedback type="invalid">
-                          Campo obrigatório.
-                        </Form.Control.Feedback> */}
+                      <Form.Control.Feedback type="invalid">
+                        Campo obrigatório.
+                      </Form.Control.Feedback>
                     </InputGroup>
                   </Form.Group>
 
                 </Modal.Body>
                 <Modal.Footer>
-                  <button className="buttonNone linkHover" type="submit" style={{ color: 'var(--violet)' }} title="Criar">
+                  <button className="buttonNone linkHover" type="submit" style={{ color: 'var(--violet)' }} title="Adicionar">
                     <PlusCircle size={40} />
                   </button>
                   <button className="buttonNone linkHover" onClick={() => setShowAdicionar(false)} style={{ color: 'var(--gray-4)' }} title="Cancelar">

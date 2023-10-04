@@ -19,8 +19,8 @@ export const ListLesson = (props) => {
 		setShowDeletar(true);
 	};
 
-	const deletarPorId = () => {
-		fetch(`http://localhost:9000/api/lessons/${linhaSelecionada.id}`, {
+	const deletarPorId = async () => {
+		await fetch(`http://localhost:9000/api/lessons/${linhaSelecionada.id}`, {
 			method: 'DELETE'
 		})
 			.then(data => data.json())
