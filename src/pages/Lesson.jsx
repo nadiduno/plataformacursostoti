@@ -75,7 +75,7 @@ export const Lesson = () => {
       .then(response => {
         console.log('Resposta da solicitação POST:', response);
         setLessons(response);
-        trazerLista();    
+        trazerLista();
       })
       .catch(err => console.log('Error em criar aula', err));
   };
@@ -226,4 +226,3 @@ export const Lesson = () => {
     </div>
   );
 };
-

@@ -8,6 +8,7 @@ export const ListLesson = (props) => {
 	const [showDeletar, setShowDeletar] = useState(false);
 	const [linhaSelecionada, setLinhaSelecionada] = useState({});
 	const [lista, setLista] = useState(props.lista);
+	const [showAtualizar, setShowAtualizar] = useState(false);
 
 	const mostrarModalDetalhes = (lesson) => {
 		setLinhaSelecionada(lesson);
@@ -19,6 +20,11 @@ export const ListLesson = (props) => {
 		setShowDeletar(true);
 	};
 
+	const mostrarModalAtualizar = (lesson) => {
+		setLinhaSelecionada(lesson);
+		setShowAtualizar(true);
+	};
+	
 	const deletarPorId = async () => {
 		await fetch(`http://localhost:9000/api/lessons/${linhaSelecionada.id}`, {
 			method: 'DELETE'
@@ -31,6 +37,20 @@ export const ListLesson = (props) => {
 			})
 			.catch(err => console.log('Erro de solicitação', err));
 		setShowDeletar(false);
+	};
+
+	const atualizarPorId = async () => {
+		await fetch(`http://localhost:9000/api/lessons/${linhaSelecionada.id}`, {
+			method: 'PATCH'
+		})
+			.then(data => data.json())
+			.then(resposta => {
+				setLista(listaAnterior => {
+					return listaAnterior.filter(lesson => lesson.id !== linhaSelecionada.id);
+				});
+			})
+			.catch(err => console.log('Erro de solicitação', err));
+		setShowAtualizar(false);
 	};
 
 	return (
@@ -50,7 +70,7 @@ export const ListLesson = (props) => {
 									{lesson.typelesson}
 								</ListGroup.Item>
 								&nbsp;
-								<button className="buttonNone linkHover" style={{ color: 'var(--violet)' }} title="Atualizar">
+								<button className="buttonNone linkHover" onClick={() => mostrarModalAtualizar(lesson)} style={{ color: 'var(--violet)' }} title="Atualizar">
 									<NotePencil size={30} />
 								</button>
 								<button className="buttonNone linkHover" onClick={() => mostrarModalDeletar(lesson)} style={{ color: 'var(--red)' }} title="Eliminar">
@@ -89,6 +109,27 @@ export const ListLesson = (props) => {
 					</button>
 				</Modal.Footer>
 			</Modal >
+
+			<Modal className="pageOpacity" show={showAtualizar} onHide={() => setShowAtualizar(false)} aria-labelledby="contained-modal-title-vcenter" centered>
+				<Modal.Header closeButton>
+					<Modal.Title>Atualizar {linhaSelecionada.title} </Modal.Title>
+				</Modal.Header>
+				<Modal.Body className="modalViolet">
+					
+					
+					Você realmente deseja atualizar esta aula?
+
+				</Modal.Body>
+				<Modal.Footer>
+					<button className="buttonNone linkHover" style={{ color: 'var(--red)' }} onClick={() => atualizarPorId()} title="Confirmar">
+						<NotePencil size={40} />
+					</button>
+					<button className="buttonNone linkHover" style={{ color: 'var(--gray-4)' }} onClick={() => setShowAtualizar(false)} title="Cancelar">
+						<XSquare size={40} />
+					</button>
+				</Modal.Footer>
+			</Modal >
+
 		</>
 	);
 };
