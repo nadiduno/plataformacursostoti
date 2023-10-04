@@ -24,9 +24,6 @@ export const Lesson = () => {
     trazerLista();
   }, []);
 
-  useEffect(() => {
-    console.log(state)
-  }, [state]);
 
   const trazerLista = async () => {
     await fetch('http://localhost:9000/api/lessons/published')
@@ -76,8 +73,9 @@ export const Lesson = () => {
 
       .then(data => data.json())
       .then(response => {
-        trazerLista();
         console.log('Resposta da solicitação POST:', response);
+        setLessons(response);
+        trazerLista();    
       })
       .catch(err => console.log('Error em criar aula', err));
   };
