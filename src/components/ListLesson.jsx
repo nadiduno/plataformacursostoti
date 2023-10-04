@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { NotePencil, Trash, XSquare } from 'phosphor-react'
-import { ListGroup, Modal } from 'react-bootstrap'
+import React, { useState, useEffect } from 'react'
+import { MagnifyingGlass, NotePencil, Trash, XSquare } from 'phosphor-react'
+import { Form, InputGroup, ListGroup, Modal } from 'react-bootstrap'
 import '../styles/Modal.style.css'
 
 export const ListLesson = (props) => {
@@ -9,6 +9,7 @@ export const ListLesson = (props) => {
 	const [linhaSelecionada, setLinhaSelecionada] = useState({});
 	const [lista, setLista] = useState(props.lista);
 	const [showAtualizar, setShowAtualizar] = useState(false);
+	const [updateDescription, setUpdateDescription] = useState({ description: '' });
 
 	const mostrarModalDetalhes = (lesson) => {
 		setLinhaSelecionada(lesson);
@@ -24,7 +25,39 @@ export const ListLesson = (props) => {
 		setLinhaSelecionada(lesson);
 		setShowAtualizar(true);
 	};
-	
+
+
+	useEffect(() => {
+		console.log(updateDescription)
+	}, [updateDescription]);
+
+
+	// const handleSubmit = async (event) => {
+	// 	event.preventDefault();
+	// 	event.stopPropagation();
+	// 	const form = event.currentTarget;
+	// 	if (form.checkValidity()) { // caso de sucesso
+	// 		try {
+	// 			// await criarLesson(state); // Passar o estado state como parâmetro
+	// 			// trazerLista();
+	// 			setShowAdicionar(false);
+	// 		} catch (error) {
+	// 			console.log('Erro ao criar aula', error);
+	// 		}
+	// 	}
+	// 	setValidated(true);
+	// };
+	const handleChange = e => {
+		setUpdateDescription(anterior => {
+			return {
+				...anterior,
+				[e.target.name]: e.target.value
+			}
+		});
+	};
+
+
+
 	const deletarPorId = async () => {
 		await fetch(`http://localhost:9000/api/lessons/${linhaSelecionada.id}`, {
 			method: 'DELETE'
@@ -40,19 +73,48 @@ export const ListLesson = (props) => {
 	};
 
 	const atualizarPorId = async () => {
-		await fetch(`http://localhost:9000/api/lessons/${linhaSelecionada.id}`, {
-			method: 'PATCH'
-		})
-			.then(data => data.json())
-			.then(resposta => {
-				setLista(listaAnterior => {
-					return listaAnterior.filter(lesson => lesson.id !== linhaSelecionada.id);
-				});
-			})
-			.catch(err => console.log('Erro de solicitação', err));
-		setShowAtualizar(false);
-	};
-
+		const requestBody = {
+		  description: updateDescription.description, // Use a nova descrição aqui
+		};
+	  
+		try {
+		  const response = await fetch(`http://localhost:9000/api/lessons/${linhaSelecionada.id}`, {
+			method: 'PATCH',
+			headers: {
+			  'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(requestBody),
+		  });
+	  
+		  if (!response.ok) {
+			throw new Error('Erro na solicitação');
+		  }
+	  
+		  const data = await response.json();
+		  console.log('Desc. Nova', updateDescription.description);
+		  console.log('Id da aula', linhaSelecionada.id);
+		  console.log('Resposta da solicitação PATCH:', data);
+	  
+		  // Atualize a lista de lições se necessário
+		  setLista((listaAnterior) => {
+			return listaAnterior.map((lesson) => {
+			  if (lesson.id === linhaSelecionada.id) {
+				return {
+				  ...lesson,
+				  description: updateDescription.description, // Atualize a descrição da lição
+				};
+			  }
+			  return lesson;
+			});
+		  });
+	  
+		  setShowAtualizar(false);
+		} catch (error) {
+		  console.error('Erro de solicitação:', error);
+		}
+	  };
+  
+	  
 	return (
 		<>
 			<ListGroup>
@@ -66,6 +128,8 @@ export const ListLesson = (props) => {
 									onClick={() => mostrarModalDetalhes(lesson)}
 								>
 									{lesson.title}
+									&nbsp;-&nbsp;
+									{lesson.description}
 									&nbsp;-&nbsp;
 									{lesson.typelesson}
 								</ListGroup.Item>
@@ -115,9 +179,25 @@ export const ListLesson = (props) => {
 					<Modal.Title>Atualizar {linhaSelecionada.title} </Modal.Title>
 				</Modal.Header>
 				<Modal.Body className="modalViolet">
-					
-					
-					Você realmente deseja atualizar esta aula?
+					{linhaSelecionada.description}&nbsp;|&nbsp;
+					Aula {linhaSelecionada.typelesson}&nbsp;|&nbsp;
+					Professor(a): {linhaSelecionada.teacher}
+					<br /><br />
+					Descripção antiga
+					<InputGroup className="mb-3 pt-3">
+						<InputGroup.Text id="basic-addon1">
+							{`---> `}{linhaSelecionada.description}
+						</InputGroup.Text>
+						<Form.Control
+							name="description" 
+							placeholder="Digite a nova descripção por favor"
+							aria-label="nome"
+							aria-describedby="basic-addon1"
+							onChange={handleChange}
+						/>
+					</InputGroup>
+
+					Você realmente deseja atualizar a descripção desta aula?
 
 				</Modal.Body>
 				<Modal.Footer>
