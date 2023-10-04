@@ -47,7 +47,7 @@ export const ListLesson = (props) => {
 								>
 									{lesson.title}
 									&nbsp;-&nbsp;
-									{lesson.description}
+									{lesson.typelesson}
 								</ListGroup.Item>
 								&nbsp;
 								<button className="buttonNone linkHover" style={{ color: 'var(--violet)' }} title="Atualizar">

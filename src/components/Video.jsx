@@ -11,7 +11,6 @@ export function Video() {
                 <main>
                     <Title text='Sistema de Controle das Aulas' />
                     <div className="boxOrange">
-                                    
                     </div>
                 </main>
             </div>

@@ -5,12 +5,13 @@ import { MagnifyingGlass, PlusCircle, XSquare } from 'phosphor-react'
 import { ListLesson } from '../components/ListLesson'
 import { Siderbar2 } from '../components/Sidebar'
 import { FooterPage } from '../components/FooterPage'
-import { Title } from '../components/Title'
+
 
 import '../styles/Main.style.css'
 import '../styles/Lesson.style.css'
 import '../styles/Modal.style.css'
 import { Photos } from '../components/Photos'
+import { TitlePage } from '../components/TitlePage'
 
 
 export const Lesson = () => {
@@ -23,9 +24,12 @@ export const Lesson = () => {
     trazerLista();
   }, []);
 
+  useEffect(() => {
+    console.log(state)
+  }, [state]);
 
-  const trazerLista = () => {
-    fetch('http://localhost:9000/api/lessons/published')
+  const trazerLista = async () => {
+    await fetch('http://localhost:9000/api/lessons/published')
       .then(data => data.json())
       .then(resposta => {
         setLessons(resposta);
@@ -37,17 +41,24 @@ export const Lesson = () => {
     setShowAdicionar(true);
   };
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity()) { // caso de sucesso
-      setLessons(anterior => {
-        criarLesson();
-      });
-      
-      setShowAdicionar(false);
-    }
+  const handleSubmit = async (event) => {
     event.preventDefault();
     event.stopPropagation();
+    const form = event.currentTarget;
+    if (form.checkValidity()) { // caso de sucesso
+      try {
+        await criarLesson(state); // Passar o estado state como parâmetro
+        trazerLista();
+        setShowAdicionar(false);
+      } catch (error) {
+        console.log('Erro ao criar aula', error);
+      }
+      // setLessons(anterior => {
+      //   criarLesson();
+      // });
+      
+      // setShowAdicionar(false);
+    }
     setValidated(true);
   };
 
@@ -61,22 +72,14 @@ export const Lesson = () => {
   };
 
   const criarLesson = async () => {
-    const parametros = {
-      title: title,
-      description: description,
-      teacher: teacher,
-      typelesson: typelesson,
-      linkteste: linkteste,
-      published: published
-    };
     await fetch('http://localhost:9000/api/lessons', {
       method: "POST",
-      body: JSON.stringify(parametros),
+      body: JSON.stringify(state),
       headers: { "Content-type": "application/json; charset=UTF-8" }
     })
       .then(data => data.json())
       .then(response => trazerLista())
-      .catch(err => console.log(err));
+      .catch(err => console.log('Error em criar aula',err));
   };
 
   // const buscarlesson = e => {
@@ -96,7 +99,7 @@ export const Lesson = () => {
       <div className='container'>
         <Siderbar2 />
         <main>
-          <Title text='Sistema de Controle das Aulas' />
+          <TitlePage text='Sistema de Controle das Aulas' />
           <div className="boxOrange">
             <button className="buttonViolet buttonVioletBig linkHover" onClick={adicionarLesson}>
               <PlusCircle size={30} />
@@ -209,7 +212,7 @@ export const Lesson = () => {
 
                 </Modal.Body>
                 <Modal.Footer>
-                  <button className="buttonNone linkHover" onClick={() => setShowAdicionar(true)} style={{ color: 'var(--violet)' }} title="Criar">
+                  <button className="buttonNone linkHover" type="submit" style={{ color: 'var(--violet)' }} title="Criar">
                     <PlusCircle size={40} />
                   </button>
                   <button className="buttonNone linkHover" onClick={() => setShowAdicionar(false)} style={{ color: 'var(--gray-4)' }} title="Cancelar">
@@ -225,5 +228,4 @@ export const Lesson = () => {
     </div>
   );
 };
-
 
