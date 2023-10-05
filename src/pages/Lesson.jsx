@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Form, InputGroup, Modal } from 'react-bootstrap'
-import { MagnifyingGlass, PlusCircle, XSquare } from 'phosphor-react'
+import { PlusCircle, XSquare } from 'phosphor-react'
 
 import { ListLesson } from '../components/ListLesson'
 import { Siderbar2 } from '../components/Sidebar'
@@ -10,7 +10,7 @@ import { FooterPage } from '../components/FooterPage'
 import '../styles/Main.style.css'
 import '../styles/Lesson.style.css'
 import '../styles/Modal.style.css'
-import { Photos } from '../components/Photos'
+
 import { TitlePage } from '../components/TitlePage'
 
 
@@ -92,13 +92,16 @@ export const Lesson = () => {
 
   return (
     <div className='containerMain'>
-      {/* <img className='photo' src="src/assets/FotoToti1.svg" alt="" /> */}
-
+      
       <div className='container'>
         <Siderbar2 />
         <main>
           <TitlePage text='Sistema de Controle das Aulas' />
           <div className="boxOrange">
+            <div className='textMain'>
+              <h1>Curso</h1>
+              <p>Pode registrar, atualizar e deletar aulas.</p>
+            </div>
             <button className="buttonViolet buttonVioletBig linkHover" onClick={adicionarLesson}>
               <PlusCircle size={30} />
               Adicionar Aula

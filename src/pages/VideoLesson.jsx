@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react'
 import 'video-react/dist/video-react.css';
 
 
-import { ListVideo } from './ListVideo'
-import { FooterPage } from "./FooterPage";
-import { Siderbar2 } from "./Sidebar";
-import { TitlePage } from "./TitlePage";
+import { ListVideo } from '../components/ListVideo'
+import { FooterPage } from "../components/FooterPage";
+import { Siderbar2 } from "../components/Sidebar";
+import { TitlePage } from "../components/TitlePage";
 
-import '../styles/VideoLesson.style.css'
 
 
 export function VideoLesson() {
@@ -32,8 +31,8 @@ export function VideoLesson() {
                 <main>
                     <TitlePage text='Full Stack' />
                     <div className="boxOrange">
-                        <div className='textVideo'>
-                            <h2>Lembrete</h2>
+                        <div className='textMain'>
+                            <h1>Lembrete</h1>
                             <p>Fazer anotações e responder a avaliação pós aula.</p>
                         </div>
                         {

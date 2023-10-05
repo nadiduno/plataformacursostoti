@@ -88,6 +88,10 @@ body {
     font-weight: 700;
 }
 
+.textMain p{
+    font-size: 10px;
+}
+
 @media screen and (min-width: 769px) {
     html {
         font-size: 100%;
@@ -118,5 +122,8 @@ body {
         height: 100vh;
         z-index: 0;
         padding-top: 8rem;
+    }
+    .textMain p{
+        font-size: 18px;
     }
 }

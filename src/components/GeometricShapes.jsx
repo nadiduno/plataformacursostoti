@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { ArrowArcLeft, FolderOpen, House } from 'phosphor-react'
+import { ArrowArcLeft, FadersHorizontal, FolderOpen, House, YoutubeLogo } from 'phosphor-react'
 
 import '../styles/GeometricShapes.style.css'
 
@@ -17,11 +17,17 @@ export function GeometricShapes() {
                 </div>
             </div>
             <div className='displayShapes2'>
-                <div className='shapes shapes2 opacityShapes'></div>
+                <div className='shapes shapes2 opacityShapes'>
+                    <nav>
+                        <NavLink className="nav-link" to="/registro-aula" title="Registro/Aulas">
+                            <FadersHorizontal className='buttonNone linkHover imagenIcon' size={80} />
+                        </NavLink>
+                    </nav>
+                </div>
                 <div className='shapes shapes1'>
                     <nav>
                         <NavLink className="nav-link" to="/curso-aula" title="Cursos/Aulas">
-                            <FolderOpen className='buttonNone linkHover imagenIcon'  size={80} />
+                            <YoutubeLogo className='buttonNone linkHover imagenIcon' size={80} />
                         </NavLink>
                     </nav>
                 </div>

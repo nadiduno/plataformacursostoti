@@ -1,9 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import { HomePage } from './pages/HomePage'
-// import { Course } from './Pages/Course'
 import { Lesson } from './Pages/Lesson'
-import { VideoLesson } from './components/VideoLesson'
-// import { LessonList } from './components/LessonList'
+import { VideoLesson } from './pages/VideoLesson'
+
 
 export function Router() {
     return (
