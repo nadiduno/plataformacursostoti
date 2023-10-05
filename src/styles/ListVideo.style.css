@@ -1,0 +1,42 @@
+html {
+    font-size: 80%;
+}
+.ContainerVideo {
+    display: flex;
+    position: relative;
+    border: 1px solid red;
+}
+
+.videoYoutube {
+    width: 100%;
+    display: flex;
+    flex: 1% 1% 0%;
+    aspect-ratio: 16/9;
+    border: 1px solid yellow;
+    background: var(--gray-2);
+}
+
+.containerLessons {
+    /* width: 4rem; */
+    border-left: 1px solid var(--gray-2);
+    background: var(--white);
+    border: 1px solid blue;
+}
+
+.typeLesson{
+    border-radius: 12px 0px;
+    border: 0.5px solid var(--violet);
+}
+
+.descriptionLesson{
+    display: none;
+}
+
+@media screen and (min-width: 769px) {
+    html {
+        font-size: 100%;
+    }
+    .descriptionLesson{
+        display: block;
+    }
+}
