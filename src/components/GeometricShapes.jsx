@@ -20,7 +20,7 @@ export function GeometricShapes() {
                 <div className='shapes shapes2 opacityShapes'></div>
                 <div className='shapes shapes1'>
                     <nav>
-                        <NavLink className="nav-link" to="/curso" title="Cursos/Aulas">
+                        <NavLink className="nav-link" to="/curso-aula" title="Cursos/Aulas">
                             <FolderOpen className='buttonNone linkHover imagenIcon'  size={80} />
                         </NavLink>
                     </nav>

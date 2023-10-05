@@ -1,0 +1,9 @@
+.textVideo p{
+    font-size: 10px;
+}
+
+@media screen and (min-width: 769px) {
+    .textVideo p {
+        font-size: 18px;
+    }
+}

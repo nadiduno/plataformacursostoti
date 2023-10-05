@@ -51,14 +51,17 @@ body {
 }
 
 .boxViolet {
-    width: 41.625rem;
-    height: 17.313rem;
+    width: 100%;
+    /* height: 17.313rem; */
     background: var(--violet);
     border-radius: 20px;
     margin-top: 2.375rem;
     padding-top: 2.625rem;
     padding-left: 5rem;
     color: var(--white);
+    padding: 1rem;
+    display:flex;
+    justify-content: center;
 }
 
 
@@ -70,6 +73,17 @@ body {
     gap: 20px;
     border-radius: 8px;
     background: var(--violet);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.buttonTrasnparent {
+    display: flex;
+    /* width: 16rem; */
+    padding: 20px 24px;
+    align-items: center;
+    gap: 20px;
+    border-radius: 8px;
     color: var(--white);
     font-weight: 700;
 }

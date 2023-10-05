@@ -1,0 +1,49 @@
+
+// import { initializeApp } from "firebase/app";
+// import 'firebase/auth';
+
+
+
+//No terminal
+//npm install firebase
+// npm install -g firebase-tools
+//firebase login
+//firebase init
+//firebase deploy
+
+//firebase emulators:start
+
+// const firebaseConfig = {
+//     apiKey: "AIzaSyDoq9JuB2q2eGoh18GZqcRVnXALleBfxoU",
+//     authDomain: "cursototi.firebaseapp.com",
+//     projectId: "cursototi",
+//     storageBucket: "cursototi.appspot.com",
+//     messagingSenderId: "928851342852",
+//     appId: "1:928851342852:web:e96a8b6b472b5352612751",
+//     measurementId: "G-QRXGXCG498"
+// };
+
+// initializeApp(firebaseConfig);
+//   const app = initializeApp(firebaseConfig);
+//   const analytics = getAnalytics(app);
+
+
+    // useEffect(() => {
+    //     const googleSignInButton = document.getElementById('google-signin-button');
+
+    //     googleSignInButton.addEventListener('click', () => {
+    //         const provider = new firebase.auth.GoogleAuthProvider();
+    //         firebase.auth().signInWithPopup(provider)
+    //             .then((result) => {
+    //                 // O usuário está autenticado com sucesso
+    //                 const user = result.user;
+    //                 console.log('Usuário autenticado:', user);
+    //             })
+    //             .catch((error) => {
+    //                 // Lidar com erros de autenticação
+    //                 console.error('Erro de autenticação:', error);
+    //             });
+    //     });
+    // }, []);
+
+

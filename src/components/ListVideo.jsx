@@ -1,9 +1,10 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import ReactPlayer from 'react-player';
+import { YoutubeLogo } from 'phosphor-react';
 
 import '../styles/ListVideo.style.css'
-import {  YoutubeLogo } from 'phosphor-react';
+
 
 export const ListVideo = (props) => {
     const [selectedLesson, setSelectedLesson] = useState(null);
@@ -18,28 +19,39 @@ export const ListVideo = (props) => {
             <div className='videoYoutube'>
                 {selectedLesson && (
                     <div >
-                        <ReactPlayer controls url={selectedLesson.linkteste} playing={true} />
+                        <ReactPlayer
+                            width='100%'
+                            height='100%'
+                            controls
+                            url={selectedLesson.linkteste}
+                        />
                     </div>
                 )}
             </div>
             <aside className='containerLessons'>
                 <ListGroup>
                     {props.lista.map((lesson) => (
-                        <div key={lesson.id} style={{ display: 'flex' }}>
-                            <YoutubeLogo  size={24} />
-                            <ListGroup.Item
-                                action
-                                onClick={() => showContainerVideo(lesson)}
-                            >
-                                {lesson.title} 
-                                <div className='typeLesson'>{lesson.typelesson}</div>
-                                <div className='descriptionLesson'>{lesson.description}</div>
-                            </ListGroup.Item>
-                        </div>
+                        <ListGroup.Item
+                            action
+                            onClick={() => showContainerVideo(lesson)}
+                            style={{ border: 'none', backgroundColor: 'transparent' }}
+                        >
+                            <div key={lesson.id} className='detailsLesson'>
+                                <div>
+                                    <YoutubeLogo size={24} style={{ color: 'var(--orange)' }} />
+                                </div>
+                                <div>
+                                    <div className='titleLesson'>{lesson.title}</div>
+                                    <div className='typeLesson'>{lesson.typelesson}</div>
+                                    <div className='descriptionLesson'>{lesson.description}</div>
+                                </div>
+                            </div>
+                        </ListGroup.Item>
+                    
                     ))}
-                </ListGroup>
-            </aside>
+            </ListGroup>
+        </aside>
 
-        </div>
+        </div >
     );
 };

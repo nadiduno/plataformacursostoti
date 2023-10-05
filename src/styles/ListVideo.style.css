@@ -1,42 +1,78 @@
-html {
-    font-size: 80%;
-}
 .ContainerVideo {
     display: flex;
     position: relative;
-    border: 1px solid red;
+    aspect-ratio: 16/9;
 }
 
 .videoYoutube {
     width: 100%;
     display: flex;
-    flex: 1% 1% 0%;
-    aspect-ratio: 16/9;
-    border: 1px solid yellow;
+    flex: 1;
     background: var(--gray-2);
+    justify-content: center; /* Centraliza o vídeo horizontalmente */
+    align-items: center;
 }
 
 .containerLessons {
-    /* width: 4rem; */
+    min-width: 7rem;
     border-left: 1px solid var(--gray-2);
     background: var(--white);
-    border: 1px solid blue;
 }
 
-.typeLesson{
+.detailsLesson{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.titleLesson {
+    color: var(--violet);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.typeLesson {
     border-radius: 12px 0px;
     border: 0.5px solid var(--violet);
+    font-size: 10px;
+    color: var(--orange);
+    padding: .25rem;
+    margin: .25rem 0;
 }
 
-.descriptionLesson{
+.descriptionLesson {
     display: none;
+    font-size: 10px;
 }
+
+.list-group-item {
+    border: none;
+    background-color: transparent;
+ }
 
 @media screen and (min-width: 769px) {
     html {
         font-size: 100%;
     }
-    .descriptionLesson{
+    .containerLessons {
+        min-width: 10rem;
+    }    
+    .descriptionLesson {
         display: block;
+    }
+
+    .titleLesson{
+        font-size: 18px;
+        padding: .25rem 0;
+    }
+    .descriptionLesson,
+    .typeLesson {
+        font-size: 16px;
+    }
+    .videoYoutube {
+        min-width: 80%; 
     }
 }

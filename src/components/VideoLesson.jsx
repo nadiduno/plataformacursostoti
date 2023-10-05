@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Form, InputGroup, Modal } from 'react-bootstrap'
-import { Player } from 'video-react';
 import 'video-react/dist/video-react.css';
 
 
@@ -9,7 +7,7 @@ import { FooterPage } from "./FooterPage";
 import { Siderbar2 } from "./Sidebar";
 import { TitlePage } from "./TitlePage";
 
-import "../styles/Card.style.css"
+import '../styles/VideoLesson.style.css'
 
 
 export function VideoLesson() {
@@ -32,20 +30,15 @@ export function VideoLesson() {
             <div className='container'>
                 <Siderbar2 />
                 <main>
-                    <TitlePage text='Sistema de Controle das Aulas' />
+                    <TitlePage text='Full Stack' />
                     <div className="boxOrange">
-                        <div>
-                            <div>
-                                <h1>Lembrete</h1>
-                                <p>Fazer anotações e responder a avaliação pós aula.</p>
-                            </div>
-                            <div>
-                                {
-                                    lessons.length ? <ListVideo lista={lessons} /> : <></>
-                                }
-                            </div>
+                        <div className='textVideo'>
+                            <h2>Lembrete</h2>
+                            <p>Fazer anotações e responder a avaliação pós aula.</p>
                         </div>
-
+                        {
+                            lessons.length ? <ListVideo lista={lessons} /> : <></>
+                        }
                     </div>
                 </main>
             </div>
