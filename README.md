@@ -19,7 +19,7 @@
 <div>
   <img 
     alt="Captura de pantalla do aplicativo, tem uma que apresenta as aula de um curso e botões para adicionar, actualizar e elminar as aluas, em cores roxo e laranja"
-    src="https://raw.githubusercontent.com/nadiduno/totiLunch/main/.github/imgApp.png" 
+    src="https://raw.githubusercontent.com/nadiduno/plataformacursostoti/main/.github/imgApp.png" 
     width="30%"
   >
   <br />
@@ -31,7 +31,7 @@
 <div>
   <img 
     alt="Captura de pantalla do aplicativo, tem a logomarca de uma lancheria e 6 card com imagens de comidas as quais representam as categorias deste aplicativo"
-    src="https://raw.githubusercontent.com/nadiduno/totiLunch/main/.github/imgApp1.png" 
+    src="https://raw.githubusercontent.com/nadiduno/plataformacursostoti/main/.github/imgApp1.png" 
     width="30%"
   >
   <br />
