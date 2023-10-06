@@ -22,7 +22,7 @@ export function HomePage() {
 
                                 <nav>
                                     <NavLink className="nav-link" to="/registro-aula" title="Cursos/Aulas">
-                                        <SignIn className='buttonNone linkHover imagenIcon' size={20} />
+                                        <SignIn className='buttonNone linkHover imagenIcon' size={20} alt=""/>
                                         Entrar no sistema
 
                                     </NavLink>

@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import 'video-react/dist/video-react.css';
-
-
 import { ListVideo } from '../components/ListVideo'
 import { FooterPage } from "../components/FooterPage";
 import { Siderbar2 } from "../components/Sidebar";
 import { TitlePage } from "../components/TitlePage";
-
-
 
 export function VideoLesson() {
     const [lessons, setLessons] = useState([]);

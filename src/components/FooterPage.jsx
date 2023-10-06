@@ -19,21 +19,21 @@ export function FooterPage() {
                     target="_blank"
                     className="linkHover"
                 >
-                    <GithubLogo size={30} />
+                    <GithubLogo size={30} alt="Logo de Github, é um gato em silhueta preta com pés de polvo"/>
                 </a>
                 <a
                     href="https://www.instagram.com/toti.diversidade/?hl=pt-br"
                     target="_blank"
                     className="linkHover"
                 >
-                    <InstagramLogo size={30} />
+                    <InstagramLogo size={30} alt="Logo de Linkedin , é uma câmara em silhueta preto" />
                 </a>
                 <a
                     href="https://www.linkedin.com/company/toti-diversidade/"
                     target="_blank"
                     className="linkHover"
                 >
-                    <LinkedinLogo size={30} />
+                    <LinkedinLogo size={30} alt="Logo de Linkedin , é uma letra IN em preto"/>
                 </a>
             </div>
             </div>

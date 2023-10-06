@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { MagnifyingGlass, NotePencil, Trash, XSquare } from 'phosphor-react'
+import { NotePencil, Trash, XSquare } from 'phosphor-react'
 import { Form, InputGroup, ListGroup, Modal } from 'react-bootstrap'
 import '../styles/Modal.style.css'
 
@@ -26,12 +26,6 @@ export const ListLesson = (props) => {
 		setShowAtualizar(true);
 	};
 
-
-	useEffect(() => {
-		console.log(updateDescription)
-	}, [updateDescription]);
-
-
 	// const handleSubmit = async (event) => {
 	// 	event.preventDefault();
 	// 	event.stopPropagation();
@@ -47,6 +41,7 @@ export const ListLesson = (props) => {
 	// 	}
 	// 	setValidated(true);
 	// };
+
 	const handleChange = e => {
 		setUpdateDescription(anterior => {
 			return {
@@ -74,7 +69,7 @@ export const ListLesson = (props) => {
 
 	const atualizarPorId = async () => {
 		const requestBody = {
-		  description: updateDescription.description, // Use a nova descrição aqui
+		  description: updateDescription.description, 
 		};
 	  
 		try {
@@ -95,13 +90,12 @@ export const ListLesson = (props) => {
 		  console.log('Id da aula', linhaSelecionada.id);
 		  console.log('Resposta da solicitação PATCH:', data);
 	  
-		  // Atualize a lista de lições se necessário
 		  setLista((listaAnterior) => {
 			return listaAnterior.map((lesson) => {
 			  if (lesson.id === linhaSelecionada.id) {
 				return {
 				  ...lesson,
-				  description: updateDescription.description, // Atualize a descrição da lição
+				  description: updateDescription.description,
 				};
 			  }
 			  return lesson;
@@ -135,10 +129,10 @@ export const ListLesson = (props) => {
 								</ListGroup.Item>
 								&nbsp;
 								<button className="buttonNone linkHover" onClick={() => mostrarModalAtualizar(lesson)} style={{ color: 'var(--violet)' }} title="Atualizar">
-									<NotePencil size={30} />
+									<NotePencil size={30} alt='Silhueta de um caderno com um lápis'/>
 								</button>
 								<button className="buttonNone linkHover" onClick={() => mostrarModalDeletar(lesson)} style={{ color: 'var(--red)' }} title="Eliminar">
-									<Trash size={30} />
+									<Trash size={30} alt='Silhueta de uma lixeira'/>
 								</button>
 
 							</div>
@@ -202,10 +196,10 @@ export const ListLesson = (props) => {
 				</Modal.Body>
 				<Modal.Footer>
 					<button className="buttonNone linkHover" style={{ color: 'var(--red)' }} onClick={() => atualizarPorId()} title="Confirmar">
-						<NotePencil size={40} />
+						<NotePencil size={40} alt='Silhueta de um caderno com um lápis'/>
 					</button>
 					<button className="buttonNone linkHover" style={{ color: 'var(--gray-4)' }} onClick={() => setShowAtualizar(false)} title="Cancelar">
-						<XSquare size={40} />
+						<XSquare size={40} alt='Silhueta de um quadrado com uma x'/>
 					</button>
 				</Modal.Footer>
 			</Modal >

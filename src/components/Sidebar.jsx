@@ -1,14 +1,6 @@
-import '../styles/Sidebar.style.css'
 import { GeometricShapes } from './GeometricShapes'
 
-
-export function Siderbar1(){
-  return(
-      <aside className="sideBar">
-        
-      </aside>
-  )
-}
+import '../styles/Sidebar.style.css'
 
 export function Siderbar2(){
     return(
@@ -16,7 +8,7 @@ export function Siderbar2(){
           <img 
             className="logoToti"
             src="src/assets/LogoToti.svg" 
-            alt="" 
+            alt="Logomarca da toti, são letras quadradas que diz toti na cor roxo e o ponto da i em laranja" 
           />
           <GeometricShapes />
         </aside>

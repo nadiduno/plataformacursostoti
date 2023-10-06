@@ -38,7 +38,7 @@ export const ListVideo = (props) => {
                         >
                             <div key={lesson.id} className='detailsLesson'>
                                 <div>
-                                    <YoutubeLogo size={24} style={{ color: 'var(--orange)' }} />
+                                    <YoutubeLogo size={24} style={{ color: 'var(--orange)' }} alt='Logo de Youtube, é um play em silhueta'/>
                                 </div>
                                 <div>
                                     <div className='titleLesson'>{lesson.title}</div>

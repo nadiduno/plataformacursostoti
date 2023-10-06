@@ -8,7 +8,6 @@ export function LessonList() {
   const [selectedLesson, setSelectedLesson] = useState(null);
 
   useEffect(() => {
-    // Substitua a URL pela sua URL real.
     fetch('http://localhost:9000/api/lessons/published')
       .then((response) => response.json())
       .then((data) => setLessons(data))
@@ -23,7 +22,6 @@ export function LessonList() {
     <Container fluid>
       <Row>
         <Col md={6}>
-          {/* Exibe o vídeo aqui (substitua pela exibição real do vídeo) */}
           {selectedLesson && (
             <div>
               <h2>Vídeo</h2>
@@ -34,7 +32,6 @@ export function LessonList() {
           )}
         </Col>
         <Col md={6}>
-          {/* Lista de Lessons como Accordion */}
           <h2>Lista de Aulas</h2>
           <Accordion defaultActiveKey="0">
             {lessons.map((lesson, index) => (
